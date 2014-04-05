@@ -12,6 +12,14 @@ b{
 	margin-top:10px;
 	height:100px;
 	}
+	
+#fork{
+	width:125px;
+	height:125px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	}
 .wrap{
 	width:960px;
 	margin-right:auto;

@@ -7,15 +7,24 @@
 	text-align:left;
 	padding:20px;
 	box-sizing:border-box;
--webkit-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 	display:inline-block;
-    
-	width:48%;
-	height:500px;
+		height:500px;
 	background-color:#70DBDB;
 	border:5px solid #388E8E;
 }
+	
+#leftblock{
+    width:48%;
+}
+#rightblock{
+	width:48%
+}
+#bigbox3{
+	width:96%
+}
+
 .bigbox2 h1{
 	color:#FFFFFF;
 }

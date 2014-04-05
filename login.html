@@ -1,13 +1,14 @@
+<!-- Welcome page by Suzin !!!!-->
 <html>
 	<head>
-		<link rel="stylesheet" href="style.css" type="text/css"></link>
+		<link rel="stylesheet" href="http://cs.mcgill.ca/~cliu65/Pollymorph/style.css" type="text/css"></link>
 		<link rel="stylesheet" href="style_login.css" type="text/css"></link>
 		<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,500,700,800,900,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<div id="topHalf" class="wrap">
 			<div id="loginbuttons" >
-				<a href="#">
+				<a href="login.html">
 				<div class="smallbutton" >
 					<b>login</b>
 				</div>
@@ -24,7 +25,7 @@
 			<div class="bigbox2" id="leftblock">
 				<h1>Login</h1>
 				
-					<form>
+					<form action="login.php" method="post">
 						<p>ID</p><input type="text" name="loginID"><br>
 						<p>password</p><input type="password" name="loginpwd"><br><br>
 						<input type="submit" value="Login">
@@ -35,7 +36,7 @@
 			<div class="bigbox2" id="rightblock">
 				<h1>Sign Up</h1>
 				
-				<form>
+				<form action="signup.php" method="post"> 
 					<p>ID</p><input type="text" name="ID"><br>
 					<p>password</p><input type="password" name="pwd"><br>
 					<p>re-enter password</p><input type="text" name="repassword"><br>
