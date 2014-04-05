@@ -7,16 +7,20 @@ function inputBlur(i){
     if(i.value==""){ i.value=i.defaultValue; i.style.color="#888"; }
 }
 </script>
-	<head>
-		<link rel="stylesheet" href="style.css" type="text/css"></link>
+<head>
+		<title>Create A Survey</title>
+		<link rel="stylesheet" href="http://cs.mcgill.ca/~cliu65/Pollymorph/style.css" type="text/css"></link>
 		<link rel="stylesheet" href="style_createSurvey.css" type="text/css"></link>
-		<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,500,700,800,900,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
-	</head>
+		<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,500,700,800,900,400italic,500italic,700italic,800italic,900italic 'rel='stylesheet' type='text/css'>
+</head>
 	<body>
+	
 		<div id="topHalf" class="wrap">
 			<div id="loginbuttons" >
-				<a href="#123">
-				</br>
+				<a href="http://cs.mcgill.ca/~cliu65/Pollymorph/welcome.html">
+				<div class="smallbutton">
+					<b>back to welcome page</b>
+				</div>
 				</a>
 			</div>
 			<div id="header" >
@@ -28,25 +32,21 @@ function inputBlur(i){
 		
 		<div id="content2" class="wrap">
 			<div class="bigbox2" id="bigbox3">
+<b>Create a New Survey</b>
 			
-			<b>Create a New Survey</b>
-			</br>
-			<div id="nameOfSurvey">
-		<input type="text" name="surveyName" style="color:#888; width:320px; position:relative;"value="Enter the title of the survey" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
-			</div>
-			
-			<div id="questions">
-		<input type="text" name="surveyName" style="color:#888; width:270px; position:relative;"value="Enter the survey question" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
-			<a href="http://www.google.ca"> <button> ADD </button> </a>
-			</div>
-			
-			<div id="done">
-					<a href="http://www.google.ca"> <button> NEW </button> </a>
-					<a href="http://cs.mcgill.ca/~cliu65/Pollymorph/welcome.html"> <button> DONE </button> </a>
-			</div>
+<p><form class="this" action="newSurvey.py" method="post" margin="0px">
+<input type="text" name="survey_name" style="color:#888; width:270px; position:relative;"value="Enter the title of the survey" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+<input type="submit" value="NEW"></form></p>
+				
+<p><form class="this" action="addQuestion.py" method="post" margin="0px">
+<input type="text" name="question_name" style="color:#888; width:270px; position:relative;"value="Enter a new survey question" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+<input type="submit" value="ADD">
+<input type="hidden" name="surveyTitle" value="survey_name"></form></p>
 			
 			
-			
+<p><form action="endSurvey.py" method="post"><input type="submit" value="DONE"><input type="hidden" name="surveyName" value="survey_name"></form></p>
+	
+	<a href="http://cs.mcgill.ca/~cliu65/Pollymorph/welcome.html">
 			</div>
 		</div>
 	</body>
