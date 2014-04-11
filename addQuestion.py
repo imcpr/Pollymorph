@@ -6,6 +6,7 @@ import cgi
 form = cgi.FieldStorage()
 
 surveyTitle = form.getvalue("surveyTitle")
+userID = form.getvalue("addID")
 f = open("survey.ssv", "a")
 f.write(form.getvalue("question_name"))
 f.write("\n")
@@ -14,4 +15,4 @@ f.close()
 
 
 
-regenerate.regenerate(surveyTitle,"addQ")
+regenerate.regenerate(userID,surveyTitle,"addQ")

@@ -35,16 +35,19 @@ function inputBlur(i){
 <b>Create a New Survey</b>
 			
 <p><form class="this" action="newSurvey.py" method="post" margin="0px">
+<input type="hidden" name="newID" value="ID">
 <input type="text" name="survey_name" style="color:#888; width:270px; position:relative;"value="Enter the title of the survey" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <input type="submit" value="NEW"></form></p>
 				
 <p><form class="this" action="addQuestion.py" method="post" margin="0px">
 <input type="text" name="question_name" style="color:#888; width:270px; position:relative;"value="Enter a new survey question" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
-<input type="submit" value="ADD">
-<input type="hidden" name="surveyTitle" value="survey_name"></form></p>
+<input type="hidden" name="addID" value="ID">
+<input type="hidden" name="surveyTitle" value="survey_name"><input type="submit" value="ADD"></form></p>
+
+
 			
 			
-<p><form action="endSurvey.py" method="post"><input type="submit" value="DONE"><input type="hidden" name="surveyName" value="survey_name"></form></p>
+<p><form action="endSurvey.py" method="post"><input type="hidden" name="endID" value="user_ID"><input type="submit" value="DONE"><input type="hidden" name="surveyName" value="survey_name"></form></p>
 	
 	<a href="http://cs.mcgill.ca/~cliu65/Pollymorph/welcome.html">
 			</div>
