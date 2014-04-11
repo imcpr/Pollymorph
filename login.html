@@ -1,4 +1,3 @@
-<!-- Welcome page by Suzin !!!!-->
 <html>
 	<head>
 		<link rel="stylesheet" href="http://cs.mcgill.ca/~cliu65/Pollymorph/style.css" type="text/css"></link>
@@ -7,16 +6,18 @@
 	</head>
 	<body>
 		<div id="topHalf" class="wrap">
-			<div id="loginbuttons" >
-				<a href="login.html">
-				<div class="smallbutton" >
-					<b>login</b>
+		<!--	<div id="loginbuttons" >
+				<a href="http://www.cs.mcgill.ca/~schen89/createSurvey.py">
+				<div class="smallbutton2" >
+					<b>create a new survey</b>
 				</div>
 				</a>
-			</div>
-			<div id="header" >
+			</div>-->
+			<a href="http://cs.mcgill.ca/~cliu65/Pollymorph/welcome.html">
+				<div id="header" >
 				<img id="logo" src="logo.png">
-			</div>
+				</div>
+			</a>
 		</div>
 		
 		
@@ -25,23 +26,27 @@
 			<div class="bigbox2" id="leftblock">
 				<h1>Login</h1>
 				
-					<form action="login.php" method="post">
-						<p>ID</p><input type="text" name="loginID"><br>
-						<p>password</p><input type="password" name="loginpwd"><br><br>
-						<input type="submit" value="Login">
+					<form name="login" action="validate.cgi" method="post">
+						
+						<p>ID</p><input type="text" name="loginID" placeholder="8 - 20 characters" maxlength="20"><br>
+						<p>password</p><input type="password" name="loginpwd" placeholder="8 - 20 characters" maxlength="20"><br>
+						
+						<p><input type="submit" value="Login"></p>
+					
 					</form>
+					<br><br><br /><br /><br />
 							
 			</div>
 			
 			<div class="bigbox2" id="rightblock">
 				<h1>Sign Up</h1>
 				
-				<form action="signup.php" method="post"> 
-					<p>ID</p><input type="text" name="ID"><br>
-					<p>password</p><input type="password" name="pwd"><br>
-					<p>re-enter password</p><input type="text" name="repassword"><br>
-					<p>email</p><input type="text" name="email"><br><br>
-					<input type="submit" value="Sign Up">
+				<form name="signup" action="newuser.cgi" method="post"> 
+					<p>ID</p><input type="text" name="ID" placeholder="8 - 20 characters" maxlength="20"><br>
+					<p>password</p><input type="password" name="pwd" placeholder="8 - 20 characters" maxlength="20"><br>
+					<p>re-enter password</p><input type="password" name="rpwd" placeholder="re-enter password" maxlength="20"><br>
+					<p>email</p><input type="text" name="email" placeholder="email"><br><br>
+					<p><input type="submit" value="Sign Up"></p>
 				</form>	
 					
 			</div>
