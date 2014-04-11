@@ -8,22 +8,45 @@
 	padding:20px;
 	box-sizing:border-box;
 	-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
 	display:inline-block;
 		height:500px;
 	background-color:#70DBDB;
 	border:5px solid #388E8E;
 }
-	
+
 #leftblock{
-    width:48%;
+    width:46%;
 }
 #rightblock{
-	width:48%
+	width:46%
 }
-#bigbox3{
-	width:96%
+
+
+
+.smallbutton2{
+	position:absolute;
+	text-align:center;
+	right:0;
+	border: 2px solid #388E8E;
+    -moz-box-shadow:    1px 1px 1px 1px #388E8E;
+    -webkit-box-shadow: 1px 1px 1px 1px #388E8E;
+    box-shadow:         1px 1px 1px 1px #388E8E;
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, #70DBDB 50%, #388E8E 50%);
+    transition: background-position 0.3s;
+	width:140px;
 }
+
+.smallbutton2:hover{
+	background-position: 0 -100%;
+	border-color:#70DBDB;
+	
+	border: 2px solid #70DBDB;
+    -moz-box-shadow:    1px 1px 1px 1px #70DBDB;
+    -webkit-box-shadow: 1px 1px 1px 1px #70DBDB;
+    box-shadow:         1px 1px 1px 1px #70DBDB;
+   }
 
 .bigbox2 h1{
 	color:#FFFFFF;
@@ -35,4 +58,33 @@
 #rightblock p{
 	width:130px;
 	display:inline-block;
+}
+/*input[type=text]{
+	padding: 5px;
+	border: 1px solid #FFFFFF;
+	background: #FFFFFF;
+	
+}
+input[type=password]{
+	padding: 5px;
+	border:1px solid #FFFFFF;
+	background: #FFFFFF;
+}
+input[type=submit] {
+	padding:5px 15px;
+	color:#388E8E; 
+	background-color:#FFFFFF; border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+	background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, #FFFFFF 50%, #388E8E 50%);
+    transition: background-position 0s;
+}
+    
+input[type=submit]:hover{
+    background-color:#FFFFFF;
+    color:white;
+    background-position: 0 -100%;*/
+	
 }
