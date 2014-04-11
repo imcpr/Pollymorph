@@ -22,7 +22,7 @@
     
 	display:inline-block;
 	width:70%;
-	height:500px;
+	min-height:500px;
 	
 	background-color:#70DBDB;
 	border:5px solid #388E8E;
