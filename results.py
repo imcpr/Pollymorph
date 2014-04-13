@@ -52,16 +52,19 @@ def getQuestion(n, userid):
 	result = open("results.ssv", "r")
 	count = [0,0,0,0]
 	line = result.readline()
+	numResponse = 0
 	# move cursor to this user
 	while line.rstrip() != userid:
 		line = result.readline()
 	line = result.readline() # offset after 1
 	while line.rstrip() != "***END***":
 		user = line.split(" ")
-		count[int(user[n-1])-1] += 1	
+		count[int(user[n-1])-1] += 1
+		numResponse += 1
 		line = result.readline()
 	result.close()
-	return count
+	x = {'count':count, 'numResponse':numResponse}
+	return x
 		
 
 def displayResults(form, userid):
@@ -76,7 +79,6 @@ def displayResults(form, userid):
 	resultsPage.close()
 	# done with table, dynamic content here
 	
-	#survey  = urllib.urlopen('http://cs.mcgill.ca/~cliu65/Pollymorph/survey.ssv')
 	survey = urllib.urlopen('http://cs.mcgill.ca/~schen89/survey.ssv')
 	questions = survey.readline()
 	# move cursor to userid
@@ -89,14 +91,16 @@ def displayResults(form, userid):
 	i = 1
 	questions=survey.readline()
 	while questions.rstrip() != "***END***":
-		count = getQuestion(i, userid)
+		x = getQuestion(i, userid)
+		count = x['count']
 		print "<tr>\n"
 		print "<td>"+str(i)+".</td>\n"
 		print "<td class=\"nocenter\">"+questions.rstrip()+"</td>\n"	
-		print "<td>"+str(count[3])+"</td>\n"
-		print "<td>"+str(count[2])+"</td>\n"
-		print "<td>"+str(count[1])+"</td>\n"
-		print "<td>"+str(count[0])+"</td>\n"
+		print "<td>%d</td>\n" % count[3]
+		print "<td>%d</td>\n" % count[2]
+		print "<td>%d</td>\n" % count[1]
+		print "<td>%d</td>\n" % count[0]
+		print "<td>%.2f</td>\n" % ((count[0]+count[1]*2+count[2]*3+count[3]*4)/x['numResponse'])
 		print "</tr>\n"
 		questions = survey.readline()
 		i = i+1
