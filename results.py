@@ -52,19 +52,16 @@ def getQuestion(n, userid):
 	result = open("results.ssv", "r")
 	count = [0,0,0,0]
 	line = result.readline()
-	numResponse = 0
-	# move cursor to this user
+	
 	while line.rstrip() != userid:
 		line = result.readline()
 	line = result.readline() # offset after 1
 	while line.rstrip() != "***END***":
 		user = line.split(" ")
 		count[int(user[n-1])-1] += 1
-		numResponse += 1
 		line = result.readline()
 	result.close()
-	x = {'count':count, 'numResponse':numResponse}
-	return x
+	return count
 		
 
 def displayResults(form, userid):
@@ -91,8 +88,7 @@ def displayResults(form, userid):
 	i = 1
 	questions=survey.readline()
 	while questions.rstrip() != "***END***":
-		x = getQuestion(i, userid)
-		count = x['count']
+		count = getQuestion(i, userid)
 		print "<tr>\n"
 		print "<td>"+str(i)+".</td>\n"
 		print "<td class=\"nocenter\">"+questions.rstrip()+"</td>\n"	
@@ -100,7 +96,7 @@ def displayResults(form, userid):
 		print "<td>%d</td>\n" % count[2]
 		print "<td>%d</td>\n" % count[1]
 		print "<td>%d</td>\n" % count[0]
-		print "<td>%.2f</td>\n" % ((count[0]+count[1]*2+count[2]*3+count[3]*4)/x['numResponse'])
+		print "<td>%.2f</td>\n" % (float(count[0]+count[1]*2+count[2]*3+count[3]*4)/float(count[0]+count[1]+count[2]+count[3]))
 		print "</tr>\n"
 		questions = survey.readline()
 		i = i+1
@@ -118,6 +114,7 @@ def displayResults(form, userid):
 def main():
 	print "Content-Type: text/html\n\n"
 	userid="guest"
+
 	form = cgi.FieldStorage()
 	if form.has_key('userID'):
 		userid = form['userID'].value
